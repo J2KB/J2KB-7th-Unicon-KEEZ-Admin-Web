@@ -1,4 +1,4 @@
-# j2kb-7th-unicon-keez-admin-web
+# j2kb-7th-unicon-sellstory-admin-web
 
 ## Project setup
 ```
