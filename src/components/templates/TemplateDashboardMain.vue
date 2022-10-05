@@ -1,15 +1,15 @@
 <template>
-  <div class="dashboard-main-wrapper">
+  <div class="template-dashboard-main-wrapper">
     <router-view />
   </div>
 </template>
 <script>
 export default {
-  name: "dashboard-main",
+  name: "template-dashboard-main",
 };
 </script>
 <style lang="scss" scoped>
-.dashboard-main-wrapper {
+.template-dashboard-main-wrapper {
   width: 100%;
 }
 </style>

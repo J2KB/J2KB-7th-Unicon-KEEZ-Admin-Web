@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard-side-wrapper">
+  <div class="template-dashboard-side-wrapper">
     <img
       class="w-75 p-5"
       src="@/assets/logo.png"
@@ -20,7 +20,7 @@
 </template>
 <script>
 export default {
-  name: "dashboard-side",
+  name: "template-dashboard-side",
   props: {
     menuList: {
       type: Array,
@@ -45,7 +45,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.dashboard-side-wrapper {
+.template-dashboard-side-wrapper {
   width: 100%;
 
   .active {
