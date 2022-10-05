@@ -1,14 +1,14 @@
 <template>
   <div class="dashboard-view-wrapper">
-    <dashboard-side class="side" :menu-list="menuList" />
-    <dashboard-main class="main" />
+    <template-dashboard-side class="side" :menu-list="menuList" />
+    <template-dashboard-main class="main" />
   </div>
 </template>
 <script>
-import DashboardSide from "@/components/templates/DashboardSide.vue";
-import DashboardMain from "@/components/templates/DashboardMain.vue";
+import TemplateDashboardSide from "@/components/templates/TemplateDashboardSide.vue";
+import TemplateDashboardMain from "@/components/templates/TemplateDashboardMain.vue";
 export default {
-  components: { DashboardSide, DashboardMain },
+  components: { TemplateDashboardSide, TemplateDashboardMain },
   name: "dashboard-view",
   data() {
     return {
@@ -33,9 +33,12 @@ export default {
   display: flex;
   .side {
     width: 20%;
-    border-right: 1px solid #dee2e6;
+    height: 100%;
   }
   .main {
+    border-left: 1px solid #dee2e6;
+    overflow: overlay;
+    height: 100%;
     width: 80%;
   }
 }
