@@ -68,7 +68,7 @@ export default {
         this.items.push({
           id: i,
           nickname: "Dickerson",
-          points: "Macdonald",
+          points: "300",
           register_date: "2022.10.06",
         });
       }
@@ -84,6 +84,11 @@ export default {
     },
     showDetailView(item, index, event) {
       console.log(item, index, event);
+      this.$router.push({
+        // path: `/dashboard/member-detail/${item.id}`,
+        name: "member-detail",
+        params: { id: item.id, info: item },
+      });
     },
     sortChanged(event) {
       console.log(event);

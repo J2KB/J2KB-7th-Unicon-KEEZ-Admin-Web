@@ -4,6 +4,7 @@ import LoginView from "../views/LoginView.vue";
 import DashView from "../views/DashboardView.vue";
 import MemberListView from "../views/member/MemberListView.vue";
 import BoardListView from "../views/board/BoardListView.vue";
+import MemberDetailView from "../views/member/MemberDetailView.vue";
 
 const routes = [
   {
@@ -25,6 +26,12 @@ const routes = [
         path: "board-list",
         name: "board-list",
         component: BoardListView,
+      },
+      {
+        path: "member-detail/:id",
+        name: "member-detail",
+        component: MemberDetailView,
+        props: true,
       },
     ],
   },
