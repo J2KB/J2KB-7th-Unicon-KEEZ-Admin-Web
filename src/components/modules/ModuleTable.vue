@@ -34,6 +34,9 @@
       :fields="fields"
       :current-page="currentPage"
       :per-page="perPage"
+      no-local-sorting
+      @row-clicked="rowClicked"
+      @sort-changed="sortChanged"
     ></b-table>
     <!-- -->
     <b-pagination
@@ -126,6 +129,14 @@ export default {
       get() {
         return this.keyword;
       },
+    },
+  },
+  methods: {
+    rowClicked(item, index, event) {
+      this.$emit("row-clicked", item, index, event);
+    },
+    sortChanged(event) {
+      this.$emit("sort-changed", event);
     },
   },
 };
