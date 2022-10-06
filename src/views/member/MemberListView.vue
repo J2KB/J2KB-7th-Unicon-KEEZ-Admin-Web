@@ -2,7 +2,6 @@
   <div>
     <module-table
       responsive
-      filter
       search
       :items="items"
       :fields="fields"
@@ -12,6 +11,8 @@
       @current-page="test1"
       @category="test2"
       @search="test3"
+      @row-clicked="showDetailView"
+      @sort-changed="sortChanged"
     />
   </div>
 </template>
@@ -34,21 +35,25 @@ export default {
           key: "id",
           label: "회원 고유 번호",
           sortable: true,
+          thClass: "w25",
         },
         {
           key: "nickname",
           label: "별명",
           sortable: false,
+          thClass: "w25",
         },
         {
           key: "points",
           label: "보유 포인트",
           sortable: false,
+          thClass: "w25",
         },
         {
           key: "register_date",
           label: "가입 날짜",
           sortable: false,
+          thClass: "w25",
         },
       ],
       items: [],
@@ -64,7 +69,7 @@ export default {
           id: i,
           nickname: "Dickerson",
           points: "Macdonald",
-          register_date: "ㅅㄷㄴㅅ",
+          register_date: "2022.10.06",
         });
       }
     },
@@ -77,6 +82,17 @@ export default {
     test3(search) {
       console.log(search);
     },
+    showDetailView(item, index, event) {
+      console.log(item, index, event);
+    },
+    sortChanged(event) {
+      console.log(event);
+    },
   },
 };
 </script>
+<style lang="scss" scoped>
+::v-deep table.b-table thead th.w25 {
+  width: 25%;
+}
+</style>
