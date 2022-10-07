@@ -51,10 +51,10 @@ export default {
   data() {
     return {
       user: {
-        nickname: "홍길동",
-        register_type: "카카오로그인",
-        register_date: "2022.10.06",
-        points: "300",
+        nickname: "",
+        register_type: "",
+        register_date: "",
+        points: "",
         writeList: [],
       },
       perPage: 10,
@@ -122,6 +122,10 @@ export default {
     },
     showDetailView(item, index, event) {
       console.log(item, index, event);
+      this.$router.push({
+        name: "board-detail",
+        params: { id: item.id },
+      });
     },
     sortChanged(event) {
       console.log(event);

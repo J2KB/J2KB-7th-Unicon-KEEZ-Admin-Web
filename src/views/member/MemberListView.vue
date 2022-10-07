@@ -85,9 +85,8 @@ export default {
     showDetailView(item, index, event) {
       console.log(item, index, event);
       this.$router.push({
-        // path: `/dashboard/member-detail/${item.id}`,
         name: "member-detail",
-        params: { id: item.id, info: item },
+        params: { id: item.id },
       });
     },
     sortChanged(event) {
