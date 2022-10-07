@@ -10,7 +10,7 @@ export default {
   name: "template-detail-header",
   props: {
     id: {
-      type: String,
+      type: [Number, String],
       default: "",
     },
     title: {
