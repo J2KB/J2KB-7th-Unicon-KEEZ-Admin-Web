@@ -4,17 +4,15 @@
     <template-detail-main>
       <div class="profile-wrapper">
         <div class="left-divide">
-          <span class="nickname">{{ info.nickname }}</span>
+          <span class="nickname">{{ user.nickname }}</span>
           <div class="register-wrapper">
-            <span class="register-type">{{
-              info.register_type ? "" : "카카오"
-            }}</span>
-            <span class="register-date">{{ info.register_date }}에 가입</span>
+            <span class="register-type">{{ user.register_type }}</span>
+            <span class="register-date">{{ user.register_date }}에 가입</span>
           </div>
         </div>
         <div class="right-divide">
           <div class="rectangle">
-            <span class="points">{{ info.points }}</span>
+            <span class="points">{{ user.points }}</span>
             <span>보유 포인트</span>
           </div>
         </div>
@@ -23,9 +21,9 @@
         responsive
         filter
         search
-        :items="items"
+        :items="user.writeList"
         :fields="fields"
-        :totalRows="items.length"
+        :totalRows="user.writeList.length"
         :perPage="perPage"
         :category-options="categoryOptions"
         @current-page="test1"
@@ -49,16 +47,17 @@ export default {
       type: [Number, String],
       default: "",
     },
-    info: {
-      type: Object,
-      default: () => {
-        return {};
-      },
-    },
   },
   data() {
     return {
-      perPage: 25,
+      user: {
+        nickname: "홍길동",
+        register_type: "카카오로그인",
+        register_date: "2022.10.06",
+        points: "300",
+        writeList: [],
+      },
+      perPage: 10,
       categoryOptions: [
         { value: null, text: "Please select an option" },
         { value: "a", text: "This is First option" },
@@ -91,7 +90,6 @@ export default {
           thClass: "w20",
         },
       ],
-      items: [],
     };
   },
   mounted() {
@@ -99,8 +97,13 @@ export default {
   },
   methods: {
     setSampleTableData() {
+      // todo : call api and get user detail data and set info
+      this.user.nickname = "홍길동";
+      this.user.register_type = "카카오로그인";
+      this.user.register_date = "2022.10.06";
+      this.user.points = "300";
       for (let i = 0; i < 300; i++) {
-        this.items.push({
+        this.user.writeList.push({
           id: i,
           category: "Dickerson",
           title: "Macdonald Macdonald Macdonald Macdonald Macdonald",
