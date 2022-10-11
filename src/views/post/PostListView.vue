@@ -12,6 +12,7 @@
       @current-page="test1"
       @category="test2"
       @search="test3"
+      @row-clicked="showDetailView"
     />
   </div>
 </template>
@@ -19,7 +20,7 @@
 import ModuleTable from "@/components/modules/ModuleTable.vue";
 export default {
   components: { ModuleTable },
-  name: "board-list-view",
+  name: "post-list-view",
   data() {
     return {
       perPage: 25,
@@ -90,6 +91,10 @@ export default {
     },
     showDetailView(item, index, event) {
       console.log(item, index, event);
+      this.$router.push({
+        name: "post-detail",
+        params: { id: item.id },
+      });
     },
     sortChanged(event) {
       console.log(event);

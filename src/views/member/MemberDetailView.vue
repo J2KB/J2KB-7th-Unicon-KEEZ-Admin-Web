@@ -123,7 +123,7 @@ export default {
     showDetailView(item, index, event) {
       console.log(item, index, event);
       this.$router.push({
-        name: "board-detail",
+        name: "post-detail",
         params: { id: item.id },
       });
     },

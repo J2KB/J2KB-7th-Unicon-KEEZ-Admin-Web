@@ -3,8 +3,9 @@ import AboutView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import DashView from "../views/DashboardView.vue";
 import MemberListView from "../views/member/MemberListView.vue";
-import BoardListView from "../views/board/BoardListView.vue";
+import PostListView from "../views/post/PostListView.vue";
 import MemberDetailView from "../views/member/MemberDetailView.vue";
+import PostDetailView from "../views/post/PostDetailView.vue";
 
 const routes = [
   {
@@ -23,14 +24,20 @@ const routes = [
         component: MemberListView,
       },
       {
-        path: "board-list",
-        name: "board-list",
-        component: BoardListView,
+        path: "post-list",
+        name: "post-list",
+        component: PostListView,
       },
       {
         path: "member-detail/:id",
         name: "member-detail",
         component: MemberDetailView,
+        props: true,
+      },
+      {
+        path: "post-detail/:id",
+        name: "post-detail",
+        component: PostDetailView,
         props: true,
       },
     ],

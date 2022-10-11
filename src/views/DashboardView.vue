@@ -19,7 +19,7 @@ export default {
         },
         {
           name: "게시글 관리",
-          view: "board-list",
+          view: "post-list",
         },
       ],
     };
