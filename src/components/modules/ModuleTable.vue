@@ -40,7 +40,7 @@
     ></b-table>
     <!-- -->
     <b-pagination
-      class="module-pagination"
+      class="module-pagination pb-5"
       v-model="currentPage"
       :per-page="perPage"
       :total-rows="totalRows"
@@ -143,8 +143,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .module-table-wrapper {
-  height: 100%;
-
   .filter-wrapper {
     max-width: 100%;
   }

@@ -9,6 +9,5 @@ export default {
 <style lang="scss" scoped>
 .tempalte-detail-main {
   width: 100%;
-  height: 100%;
 }
 </style>

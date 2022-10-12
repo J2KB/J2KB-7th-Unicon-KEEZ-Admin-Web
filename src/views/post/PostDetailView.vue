@@ -24,28 +24,39 @@
         <span class="writer">{{ post.writer }}</span>
         <span class="date">{{ post.write_date }}</span>
       </div>
-      <b-card-group class="mt-3" deck>
-        <b-card
-          header-class="content-header"
-          header="본문 요약"
-          header-text-variant="white"
-          align="center"
-        >
-          <b-card-body class="content">
-            {{ post.summaryContent }}
-          </b-card-body>
-        </b-card>
-        <b-card
-          header-class="content-header"
-          header="본문 내용"
-          header-text-variant="white"
-          align="center"
-        >
-          <b-card-body class="content">
-            {{ post.content }}
-          </b-card-body>
-        </b-card>
-      </b-card-group>
+      <b-container class="container-height mw-100 mt-3 pb-5">
+        <b-row class="h-100 row">
+          <b-col class="h-100 col">
+            <b-card
+              no-body
+              class="h-100"
+              header-class="content-header"
+              header="본문 요약"
+              header-text-variant="white"
+              align="center"
+            >
+              <b-card-body class="content-body">
+                {{ post.summaryContent }}
+              </b-card-body>
+            </b-card>
+          </b-col>
+          <b-col class="h-100 col">
+            <b-card
+              no-body
+              class="h-100"
+              header-class="content-header"
+              header="본문 내용"
+              header-text-variant="white"
+              align="center"
+            >
+              <b-card-body class="content-body">
+                {{ post.content }}
+              </b-card-body>
+            </b-card>
+          </b-col>
+        </b-row>
+      </b-container>
+      <b-card-group class="mt-3" deck> </b-card-group>
     </template-detail-main>
   </div>
 </template>
@@ -85,8 +96,8 @@ export default {
       this.post = {
         title: "dkssdudkfsdlfdsjfldkjfdsfjoaefjslkdfjeofadklfajeo",
         category: "일상생활",
-        summaryContent: "",
-        content: "",
+        summaryContent: "dfsdafadsfdsf\n\n",
+        content: "dfsf",
         total_paid_point: 40000,
         point: 300,
         like: 100,
@@ -108,8 +119,9 @@ export default {
 }
 .post-detail-view-wrapper {
   width: 100%;
-
+  height: 100%;
   .post-detail-view {
+    height: calc(100% - 8.8%);
     padding: 5%;
     .post-info-wrapper {
       display: flex;
@@ -166,12 +178,26 @@ export default {
       }
     }
 
-    .content-header {
-      background-color: #ff4444;
-    }
+    .container-height {
+      height: 65%;
+      padding: 0;
 
-    .content {
-      height: 49.074%;
+      .row {
+        display: flex;
+        gap: 3%;
+        margin: 0;
+
+        .col {
+          padding: 0;
+          .content-header {
+            background-color: #ff4444;
+          }
+
+          .content-body {
+            white-space: pre-line;
+          }
+        }
+      }
     }
   }
 }
